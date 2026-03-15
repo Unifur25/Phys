@@ -1,0 +1,437 @@
+{% extends 'base.html' %}
+
+{%  block title %}
+  Материалы
+{% endblock %}
+
+{%  block content %}
+
+<style>
+
+
+
+
+.tablmen{
+         height:890px;
+         width:;
+         padding-top:20px
+
+          }
+
+
+ body {
+            background-color: black;
+            color: white;
+            font-family: Roboto, sans-serif;
+            text-align: left;
+            padding: 0px;
+        }
+
+.left-aligned-small-table {
+
+
+      max-width: 600px !important;
+      margin-left: auto;
+      margin-right: auto;
+      width: 665px;
+        margin-left: 10px;
+        margin-right: auto;
+}
+
+.right-aligned-small-table {
+
+      max-width: 700px !important;
+      margin-left: auto;
+      margin-right: auto;
+      width: 665px;
+        margin-left: auto;
+        margin-right: 10px;
+}
+
+
+</style>
+
+
+
+
+
+<div class="centered-text"style="background-color: rgba(255, 255, 255, 0.8);padding-top:10px">
+    <h1 style="color:black"><strong>Плотность веществ</strong></h1>
+</div>
+
+
+
+
+<div style="display: flex; justify-content: space-between;background-color: rgba(255, 255, 255, 0.8); ">
+<table class="table table-sm left-aligned-small-table">
+<thead>
+    <tr>
+      <th scope="col">№</th>
+      <th scope="col">Вещество</th>
+      <th scope="col">Плотность, кг/м³</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+      <th scope="row">1</th>
+      <td>Вода</td>
+      <td>1000</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Лёд</td>
+      <td>917</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Алюминий</td>
+      <td>2700</td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Железо</td>
+      <td>7874</td>
+    </tr>
+    <tr>
+      <th scope="row">5</th>
+      <td>Медь</td>
+      <td>8960</td>
+    </tr>
+    <tr>
+      <th scope="row">6</th>
+      <td>Золото</td>
+      <td>19320</td>
+    </tr>
+    <tr>
+      <th scope="row">7</th>
+      <td>Серебро</td>
+      <td>10490</td>
+    </tr>
+    <tr>
+      <th scope="row">8</th>
+      <td>Ртуть</td>
+      <td>13546</td>
+    </tr>
+    <tr>
+      <th scope="row">9</th>
+      <td>Этиловый спирт</td>
+      <td>789</td>
+    </tr>
+    <tr>
+      <th scope="row">10</th>
+      <td>Бензин</td>
+      <td>710</td>
+    </tr>
+    <tr>
+      <th scope="row">11</th>
+      <td>Керосин</td>
+      <td>800</td>
+    </tr>
+    <tr>
+      <th scope="row">12</th>
+      <td>Масло машинное</td>
+      <td>900</td>
+    </tr>
+    <tr>
+      <th scope="row">13</th>
+      <td>Пробка</td>
+      <td>240</td>
+    </tr>
+    <tr>
+      <th scope="row">14</th>
+      <td>Древесина (сосна)</td>
+      <td>500</td>
+    </tr>
+    </table>
+<table class="table table-sm right-aligned-small-table" >
+    <thead>
+        <tr>
+          <th scope="col">№</th>
+          <th scope="col">Вещество</th>
+          <th scope="col">Плотность, кг/м³</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">15</th>
+          <td>Сталь</td>
+          <td>7850</td>
+        </tr>
+        <tr>
+          <th scope="row">16</th>
+          <td>Чугун</td>
+          <td>7200</td>
+        </tr>
+        <tr>
+          <th scope="row">17</th>
+          <td>Олово</td>
+          <td>7300</td>
+        </tr>
+        <tr>
+          <th scope="row">18</th>
+          <td>Свинец</td>
+          <td>11340</td>
+        </tr>
+        <tr>
+          <th scope="row">19</th>
+          <td>Платина</td>
+          <td>21450</td>
+        </tr>
+        <tr>
+          <th scope="row">20</th>
+          <td>Уголь (древесный)</td>
+          <td>240</td>
+        </tr>
+        <tr>
+          <th scope="row">21</th>
+          <td>Фарфор</td>
+          <td>2300</td>
+        </tr>
+        <tr>
+          <th scope="row">22</th>
+          <td>Эфир</td>
+          <td>710</td>
+        </tr>
+        <tr>
+          <th scope="row">23</th>
+          <td>Глицерин</td>
+          <td>1260</td>
+        </tr>
+        <tr>
+          <th scope="row">24</th>
+          <td>Нефть</td>
+          <td>800</td>
+        </tr>
+        <tr>
+          <th scope="row">25</th>
+          <td>Воздух</td>
+          <td>1.29</td>
+        </tr>
+        <tr>
+          <th scope="row">26</th>
+          <td>Кислород</td>
+          <td>1.43</td>
+        </tr>
+        <tr>
+          <th scope="row">27</th>
+          <td>Водород</td>
+          <td>0.09</td>
+        </tr>
+        <tr>
+          <th scope="row">28</th>
+          <td>Гелий</td>
+          <td>0.18</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+<div style="padding-top:10px;">
+
+<div class="centered-text"style="background-color:rgba(255, 255, 255, 0.8);padding-top:10px">
+    <h1 style="color:black"><strong>Удельная теплоемкость</h1></strong>
+</div>
+
+
+<div style="display: flex; justify-content: space-between;background-color: rgba(255, 255, 255, 0.8)	; ">
+<table class="table table-sm left-aligned-small-table">
+<thead>
+<tr>
+<th scope="col">№</th>
+      <th scope="col">Вещество</th>
+      <th scope="col">Удельная теплоёмкость, Дж/(кг·°C)</th>
+      <th scope="col">Температура плавления, °C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Вода</td>
+      <td>4200</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Лёд</td>
+      <td>2100</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Алюминий</td>
+      <td>920</td>
+      <td>660</td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Железо</td>
+      <td>450</td>
+      <td>1538</td>
+    </tr>
+    <tr>
+      <th scope="row">5</th>
+      <td>Медь</td>
+      <td>380</td>
+      <td>1085</td>
+    </tr>
+    <tr>
+      <th scope="row">6</th>
+      <td>Золото</td>
+      <td>130</td>
+      <td>1064</td>
+    </tr>
+    <tr>
+      <th scope="row">7</th>
+      <td>Серебро</td>
+      <td>240</td>
+      <td>961</td>
+    </tr>
+    <tr>
+      <th scope="row">8</th>
+      <td>Ртуть</td>
+      <td>140</td>
+      <td>-38.8</td>
+    </tr>
+    <tr>
+      <th scope="row">9</th>
+      <td>Этиловый спирт</td>
+      <td>2400</td>
+      <td>-114</td>
+    </tr>
+    <tr>
+      <th scope="row">10</th>
+      <td>Бензин</td>
+      <td>2050</td>
+      <td>-40 (зависит от состава)</td>
+    </tr>
+    <tr>
+      <th scope="row">11</th>
+      <td>Керосин</td>
+      <td>2000</td>
+      <td>-40 (приблизительно)</td>
+    </tr>
+    <tr>
+      <th scope="row">12</th>
+      <td>Масло машинное</td>
+      <td>2000</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th scope="row">13</th>
+      <td>Пробка</td>
+      <td>1800</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th scope="row">14</th>
+      <td>Древесина (сосна)</td>
+      <td>2300</td>
+      <td>разрушается при нагреве</td>
+    </tr>
+  </tbody>
+</table>
+<table class="table table-sm right-aligned-small-table">
+  <thead>
+    <tr>
+      <th scope="col">№</th>
+      <th scope="col">Вещество</th>
+      <th scope="col">Удельная теплоёмкость, Дж/(кг·°C)</th>
+      <th scope="col">Температура плавления, °C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">15</th>
+      <td>Сталь</td>
+      <td>460</td>
+      <td>1370–1510</td>
+    </tr>
+    <tr>
+      <th scope="row">16</th>
+      <td>Чугун</td>
+      <td>540</td>
+      <td>1127–1200</td>
+    </tr>
+    <tr>
+      <th scope="row">17</th>
+      <td>Олово</td>
+      <td>230</td>
+      <td>232</td>
+    </tr>
+    <tr>
+      <th scope="row">18</th>
+      <td>Свинец</td>
+      <td>140</td>
+      <td>327</td>
+    </tr>
+    <tr>
+      <th scope="row">19</th>
+      <td>Платина</td>
+      <td>130</td>
+      <td>1768</td>
+    </tr>
+    <tr>
+      <th scope="row">20</th>
+      <td>Уголь (древесный)</td>
+      <td>700</td>
+      <td>сублимация ~3600</td>
+    </tr>
+    <tr>
+      <th scope="row">21</th>
+      <td>Фарфор</td>
+      <td>800</td>
+      <td>1200–1450</td>
+    </tr>
+    <tr>
+      <th scope="row">22</th>
+      <td>Эфир</td>
+      <td>2350</td>
+      <td>-116</td>
+    </tr>
+    <tr>
+      <th scope="row">23</th>
+      <td>Глицерин</td>
+      <td>2400</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th scope="row">24</th>
+      <td>Нефть</td>
+      <td>2100</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th scope="row">25</th>
+      <td>Воздух</td>
+      <td>1000</td>
+      <td>-218 (кислород)</td>
+    </tr>
+    <tr>
+      <th scope="row">26</th>
+      <td>Кислород</td>
+      <td>920</td>
+      <td>-218</td>
+    </tr>
+    <tr>
+      <th scope="row">27</th>
+      <td>Водород</td>
+      <td>14300</td>
+      <td>-259</td>
+    </tr>
+    <tr>
+      <th scope="row">28</th>
+      <td>Гелий</td>
+      <td>5200</td>
+      <td>-272.2 (при давлении)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
+<img class="tablmen" src="{{ url_for('static', filename='img/tabl.jpg',) }}"/>
+
+
+{% endblock %}

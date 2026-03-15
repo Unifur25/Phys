@@ -1,0 +1,148 @@
+
+
+
+
+body {
+  margin:0;
+}
+*,
+*::before,
+ * ::after {
+   box-sizing :border -box;
+ }
+
+
+footer {
+  padding-top:20 px;
+  background:white;
+  padding-left:10px;
+  height:100px;
+
+}
+
+
+.page {
+    overflow:;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+    max-width:auto;
+}
+
+.content {
+
+  width: 142vh;
+  margin: 0 auto;
+  padding: 1px 20px;
+  flex: 1 1 auto;
+}
+
+
+
+
+/*Главная*/
+
+header {
+    position: sticky;
+    top: 0;
+    padding:15px;
+    z-index: 1000;
+    background: #fff;
+-webkit-box-shadow: 0 5px 35px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 35px rgba(0, 0, 0, 0.15);
+}
+
+
+/*Иконка*/
+.header__image
+{
+    height: 40px;
+    widht: 40px;
+}
+/* Модальное окно */
+    .modal {
+     position: absolute,sticky;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background: rgba(0,0,0,0.5);
+     display: none;
+     z-index: 1000;
+
+
+    }
+
+    /* Основное содержимое окна */
+    .modal-content {
+     background: #ffffff;
+     padding: 20px;
+     border-radius: 10px;
+     box-shadow: 0 0 10px rgba(0,0,0,0.3);
+     width: 800px;
+     height:auto ;
+     margin:  5% auto;
+     border: 3px cyan solid;
+    }
+
+
+    /* Заголовок модального окна */
+    .modal-header {
+     font-size: 1.5em;
+     margin-bottom: 10px;
+    }
+
+    /* Основной текст модального окна */
+    .modal-body {
+     font-size: 1rem;
+     line-height: 1.5;
+    }
+
+    /* Закрытие  */
+    .close-button {
+     position: absolute;
+     top: 20px;
+     right: 20px;
+     font-size: 24px;
+     font-weight: bold;
+     color: #000;
+     cursor: pointer;
+     transition: color 0.2s;
+    }
+
+
+
+
+
+    /* Анимация */
+    .modal.show {
+     opacity: 1;
+     visibility: visible;
+     transition: opacity 0.3s ease-in-out, visibility 0.3s linear;
+    }
+
+    .modal.hide {
+     opacity: 0;
+     visibility: hidden;
+     transition: opacity 0.3s ease-in-out, visibility 0.3s linear;
+    }
+
+    .thead {
+    background-color: #343a40;
+}
+
+.centered-text {
+    background:#030544  ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border: 0px black solid;
+}
+
+
+body {
+
+}
+
+

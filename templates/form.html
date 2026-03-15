@@ -1,0 +1,988 @@
+{% extends 'base.html' %}
+
+{%  block title %}
+Формулы
+{% endblock %}
+
+{%  block content %}
+
+<style>
+
+
+         .page {
+                overflow:;
+                display:flex;
+                flex-direction:column;
+                min-height:20vh;
+                max-width:;
+            }
+
+        .white-panel {
+                padding: 20px;
+                    margin: 20px auto;
+                    border-radius: 3px;
+                    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+                    background-color: rgba(255, 255, 255, 0.8);
+                    width: auto;
+                    height: auto;
+                    line-height: 1.5em;
+                    color:black ;
+                    border: none;
+            }
+
+
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: Open Sans, sans-serif;
+            text-align: left;
+            padding: 0px;
+        }
+    </style>
+
+<div class="white-panel" style="height: 70px;padding:11px;border:1px white solid;" >
+  <div class="centered-text" style="background:none">
+      <h1> Формулы 📚   </h1>
+  </div>
+</div>
+
+<div class="d-flex gap-2 justify-content-center py-7">
+
+    <p><button id="open-modal-btn"  class="btn btn-primary -pill px-3" type="button"><h1>v</h1><p>скорость</p> </button></p>
+    <p><button id="open-modal2-btn" class="btn btn-primary -pill px-4" type="button"><h1>S</h1><p>путь</p> </button></p>
+    <p><button id="open-modal3-btn" class="btn btn-primary -pill px-2" type="button"><h1>a</h1><p>ускорение</p> </button></p>
+    <p><button  id="open-modal4-btn" class="btn btn-primary -pill px-4"  type="button"><h1>V</h1><p>объём</p> </button></p>
+    <p><button  id="open-modal5-btn" class="btn btn-primary -pill px-3"  type="button"><h1>p</h1><p>импульс</p> </button></p>
+    <p><button  id="open-modal6-btn" class="btn btn-primary -pill px-4"  type="button"><h1>F</h1><p>сила</p> </button></p>
+    <p><button  id="open-modal7-btn" class="btn btn-primary -pill px-4"  type="button"><h1>A</h1><p>работа</p> </button></p>
+    <p><button  id="open-modal8-btn" class="btn btn-primary -pill px-4"  type="button"><h1>E</h1><p>энергия</p> </button></p>
+    <p><button  id="open-modal9-btn" class="btn btn-primary -pill px-3"  type="button"><h1>N</h1><p>мощность</p> </button></p>
+
+</div>
+
+<div class="d-flex gap-2 justify-content-center py-7">
+
+
+
+    <p><button  id="open-modal10-btn" class="btn btn-primary -pill px-4"  type="button"><h1>P</h1><p>давление</p> </button></p>
+    <p><button  id="open-modal11-btn" class="btn btn-primary -pill px-3"  type="button"><h1>ρ</h1><p>плотность</p> </button></p>
+    <p><button  id="open-modal12-btn" class="btn btn-primary -pill px-4"  type="button"><h1>q</h1><p>эл.заряд</p> </button></p>
+    <p><button  id="open-modal13-btn" class="btn btn-primary -pill px-2"  type="button"><h1>U</h1><p>напряжение</p> </button></p>
+    <p><button  id="open-modal14-btn" class="btn btn-primary -pill px-4"  type="button"><h1>R</h1><p>эл.сопр</p> </button>
+    <p><button  id="open-modal15-btn" class="btn btn-primary -pill px-3"  type="button"><h1>I</h1><p>сила тока</p> </button>
+    <p><button  id="open-modal16-btn" class="btn btn-primary -pill px-3"  type="button"><h1>Q</h1><p>теплота</p> </button>
+
+</div>
+
+
+<!--v окно-->
+<div class="modal" id="myModal">
+
+        <div class="modal-content">
+<h2>Скорость</h2>
+            <p>Равномерное прямолинейное движение:</p>
+            <p>v = s / t</p>
+            <p>Равноускоренное движение:</p>
+            <p>v = v₀ + at</p>
+            <p>v = √(v₀² + 2aS)</p>
+            <p>Средняя скорость:</p>
+            <p>v = (v₀ + v) / 2</p>
+            <p>Мгновенная скорость (производная пути по времени):</p>
+            <p>v = ds/dt</p>
+            <p>Скорость при движении по окружности:</p>
+            <p>v = ω × R</p>
+
+              <span class="close-button" id="close-modal-btn">×</span>
+        </div>
+
+
+    </div>
+    
+<!--S окно-->
+<div class="modal" id="myModal2">
+
+        <div class="modal-content">
+            <h2>Путь</h2>
+            <p>Прямолинейное равномерное движение:</p>
+            <p>S = v × t</p>
+            <p>Равноускоренное движение:</p>
+            <p>S = v₀t + ½at²</p>
+            <p>S = (v² - v₀²) / (2a)</p>
+            <p>Путь при прямолинейном равнозамедленном движении:</p>
+            <p>S = v₀t - ½at²</p>
+            <p>Перемещение при движении под углом (горизонтальная проекция):</p>
+            <p>Sₓ = v₀ₓ × t</p>
+            <p>Путь при криволинейном движении (например, бросок под углом):</p>
+            <p>S = ∫|v(t)| dt</p>
+          <span class="close-button" id="close-modal2-btn" >×</span>
+        </div>
+
+
+    </div>
+
+<!--a окно-->
+<div class="modal" id="myModal3">
+
+        <div class="modal-content">
+            <h2>Ускорение</h2>
+            <p>Из второго закона Ньютона:</p>
+            <p>a = F / m</p>
+            <p>При равноускоренном движении:</p>
+            <p>a = (v - v₀) / t</p>
+            <p>a = (v² - v₀²) / (2S)</p>
+            <p>Центростремительное ускорение:</p>
+            <p>a = v² / R</p>
+            <p>Угловое ускорение:</p>
+            <p>α = Δω / Δt</p>
+            <p>Связь линейного и углового ускорения:</p>
+            <p>a = α × R</p>
+          <span class="close-button" id="close-modal3-btn" >×</span>
+        </div>
+</div>
+<!--V окно-->
+<div class="modal" id="myModal4">
+        <div class="modal-content">
+<h2>Объём</h2>
+            <p>Объём параллелепипеда:</p>
+            <p>V = a × b × c</p>
+            <p>Объём куба:</p>
+            <p>V = a³</p>
+            <p>Объём цилиндра:</p>
+            <p>V = π × r² × h</p>
+            <p>Объём шара:</p>
+            <p>V = (4/3) × π × r³</p>
+            <p>Объём конуса:</p>
+            <p>V = (1/3) × π × r² × h</p>
+            <p>Объём через плотность и массу:</p>
+            <p>V = m / ρ</p>
+            <p>Молярный объём газа при нормальных условиях:</p>
+            <p>V = n × Vₘ</p>
+
+              <span class="close-button" id="close-modal4-btn">×</span>
+            </div>
+</div>
+<!--p окно-->
+<div>   
+    <div class="modal" id="myModal5">
+        <div class="modal-content">
+            <h2>Импульс</h2>
+            <p>Импульс тела:</p>
+            <p>p = m × v</p>
+            <p>Импульс силы:</p>
+            <p>I = F × t</p>
+            <p>Второй закон Ньютона через импульс:</p>
+            <p>F = Δp / Δt</p>
+            <p>Закон сохранения импульса (для замкнутой системы):</p>
+            <p>m₁v₁ + m₂v₂ = m₁v₁' + m₂v₂'</p>
+            <p>Импульс при абсолютно упругом ударе:</p>
+            <p>Σp_до = Σp_после</p>
+            <p>Импульс фотона:</p>
+            <p>p = h / λ</p>
+
+              <span class="close-button" id="close-modal5-btn">×</span>
+            </div>
+</div>
+<!--F окно-->
+<div>   
+    <div class="modal" id="myModal6">
+        <div class="modal-content">
+<h2>Сила</h2>
+            <p>Второй закон Ньютона:</p>
+            <p>F = m × a</p>
+            <p>Сила тяжести:</p>
+            <p>F = m × g</p>
+            <p>Сила упругости (закон Гука):</p>
+            <p>F = -k × x</p>
+            <p>Сила трения:</p>
+            <p>F = μ × N</p>
+            <p>Центростремительная сила:</p>
+            <p>F = m × v² / R</p>
+            <p>Сила Архимеда:</p>
+            <p>F = ρ × g × V</p>
+            <p>Сила тока через напряжение и сопротивление (закон Ома):</p>
+            <p>F = I × L × B × sinα</p>
+            <p>Сила взаимодействия зарядов (закон Кулона):</p>
+            <p>F = k × (q₁ × q₂) / r²</p>
+
+              <span class="close-button" id="close-modal6-btn">×</span>
+            </div>
+</div>
+<!--A окно-->
+<div>
+    <div class="modal" id="myModal7">
+        <div class="modal-content">
+            <h2>Работа</h2>
+            <p>Механическая работа:</p>
+            <p>A = F × S × cosα</p>
+            <p>Работа силы тяжести:</p>
+            <p>A = m × g × h</p>
+            <p>Работа при подъёме тела по наклонной плоскости:</p>
+            <p>A = m × g × h + F_тр × S</p>
+            <p>Работа силы упругости:</p>
+            <p>A = ½k × x₁² - ½k × x₂²</p>
+            <p>Работа газа в термодинамике:</p>
+            <p>A = p × ΔV</p>
+            <p>Работа электрического тока:</p>
+            <p>A = U × I × t</p>
+            <p>Работа через мощность:</p>
+            <p>A = P × t</p>
+            <p>Работа как изменение кинетической энергии:</p>
+            <p>A = ΔE_k = ½m × v² - ½m × v₀²</p>
+
+              <span class="close-button" id="close-modal7-btn">×</span>
+            </div>
+</div>
+<!--E окно-->
+<div>
+    <div class="modal" id="myModal8">
+        <div class="modal-content">
+<h2>Энергия</h2>
+            <p>Кинетическая энергия:</p>
+            <p>E = ½m × v²</p>
+            <p>Потенциальная энергия (тяжести):</p>
+            <p>E = m × g × h</p>
+            <p>Потенциальная энергия пружины:</p>
+            <p>E = ½k × x²</p>
+            <p>Механическая энергия (полная):</p>
+            <p>E = E_k + E_p</p>
+            <p>Энергия фотона:</p>
+            <p>E = h × f</p>
+            <p>Энергия через работу:</p>
+            <p>E = A</p>
+            <p>Энергия в термодинамике (внутренняя):</p>
+            <p>ΔU = Q - W</p>
+            <p>Энергия конденсатора:</p>
+            <p>E = ½C × U²</p>
+
+              <span class="close-button" id="close-modal8-btn">×</span>
+            </div>
+</div>
+<!--N окно-->
+<div>
+    <div class="modal" id="myModal9">
+        <div class="modal-content">
+<h2>Мощность</h2>
+            <p>Мощность (средняя):</p>
+            <p>N = A / t</p>
+            <p>Мгновенная мощность:</p>
+            <p>N = F × v × cosα</p>
+            <p>Мощность в электрической цепи:</p>
+            <p>N = U × I</p>
+            <p>Мощность через ток и сопротивление (закон Джоуля–Ленца):</p>
+            <p>N = I² × R</p>
+            <p>Мощность через напряжение и сопротивление:</p>
+            <p>N = U² / R</p>
+            <p>Механическая мощность при вращательном движении:</p>
+            <p>N = M × ω</p>
+
+              <span class="close-button" id="close-modal9-btn">×</span>
+            </div>
+</div>
+<!--P окно-->
+<div>
+    <div class="modal" id="myModal10">
+        <div class="modal-content">
+<h2>Давление</h2>
+            <p>Давление (определение):</p>
+            <p>P = F / S</p>
+            <p>Гидростатическое давление:</p>
+            <p>P = ρ × g × h</p>
+            <p>Атмосферное давление на высоте (приближённо):</p>
+            <p>P = P₀ × e^(-Mgh / RT)</p>
+            <p>Закон Паскаля:</p>
+            <p>Давление, оказываемое на жидкость или газ, передаётся во все стороны без изменений.</p>
+            <p>Давление идеального газа (из основного уравнения МКТ):</p>
+            <p>P = (1/3) × n × m × v²</p>
+            <p>Уравнение состояния идеального газа (уравнение Менделеева–Клапейрона):</p>
+            <p>P × V = n × R × T</p>
+            <p>Закон Бойля–Мариотта (изотермический процесс):</p>
+            <p>P × V = const</p>
+
+              <span class="close-button" id="close-modal10-btn">×</span>
+            </div>
+</div>
+<!--r окно-->
+<div>
+    <div class="modal" id="myModal11">
+        <div class="modal-content">
+<h2>Плотность</h2>
+            <p>Плотность (определение):</p>
+            <p>ρ = m / V</p>
+            <p>Плотность вещества в различных состояниях:</p>
+            <p>Твёрдое тело — обычно высокая плотность</p>
+            <p>Жидкость — средняя плотность</p>
+            <p>Газ — низкая плотность</p>
+            <p>Средняя плотность тела:</p>
+            <p>ρ = m / V</p>
+            <p>Зависимость плотности от температуры:</p>
+            <p>ρ = ρ₀ / (1 + β × ΔT)</p>
+            <p>где β — коэффициент объёмного расширения</p>
+            <p>Плотность идеального газа из уравнения Менделеева–Клапейрона:</p>
+            <p>ρ = (P × M) / (R × T)</p>
+
+              <span class="close-button" id="close-modal11-btn">×</span>
+            </div>
+</div>    
+<!--q окно-->
+<div>
+    <div class="modal" id="myModal12">
+        <div class="modal-content">
+<h2>Электрический заряд</h2>
+            <p>Электрический заряд (определение):</p>
+            <p>q = I × t</p>
+            <p>Закон сохранения заряда:</p>
+            <p>Σq_до = Σq_после</p>
+            <p>Заряд при квантовании:</p>
+            <p>q = n × e</p>
+            <p>Ёмкость конденсатора:</p>
+            <p>C = q / U</p>
+            <p>Закон Кулона (сила взаимодействия зарядов):</p>
+            <p>F = k × (q₁ × q₂) / r²</p>
+            <p>Напряжённость электрического поля через заряд:</p>
+            <p>E = F / q</p>
+            <p>Поток электрического поля (закон Гаусса):</p>
+            <p>Φ = q / ε₀</p>
+
+              <span class="close-button" id="close-modal12-btn">×</span>
+            </div>
+</div>
+<!--U окно-->
+<div>
+    <div class="modal" id="myModal13">
+        <div class="modal-content">
+<h2>Напряжение</h2>
+            <p>Напряжение (определение):</p>
+            <p>U = A / q</p>
+            <p>Закон Ома для участка цепи:</p>
+            <p>U = I × R</p>
+            <p>Напряжение через мощность и ток:</p>
+            <p>U = P / I</p>
+            <p>Напряжение в последовательной цепи:</p>
+            <p>U_общ = U₁ + U₂ + ... + Uₙ</p>
+            <p>Напряжение в параллельной цепи:</p>
+            <p>U_общ = U₁ = U₂ = ... = Uₙ</p>
+            <p>Разность потенциалов:</p>
+            <p>U = φ₁ - φ₂</p>
+            <p>Напряжение на конденсаторе:</p>
+            <p>U = q / C</p>
+            <p>ЭДС источника (с внутренним сопротивлением):</p>
+            <p>ε = U + I × r</p>
+
+              <span class="close-button" id="close-modal13-btn">×</span>
+            </div>
+</div>
+<!--R окно-->
+<div>
+    <div class="modal" id="myModal14">
+        <div class="modal-content">
+<h2>Электрическое сопротивление</h2>
+            <p>Сопротивление (определение):</p>
+            <p>R = U / I</p>
+            <p>Закон Ома для участка цепи:</p>
+            <p>I = U / R</p>
+            <p>Сопротивление через удельное сопротивление:</p>
+            <p>R = ρ × l / S</p>
+            <p>Сопротивление при последовательном соединении:</p>
+            <p>R_общ = R₁ + R₂ + ... + Rₙ</p>
+            <p>Сопротивление при параллельном соединении:</p>
+            <p>1/R_общ = 1/R₁ + 1/R₂ + ... + 1/Rₙ</p>
+            <p>Температурная зависимость сопротивления:</p>
+            <p>R = R₀ × (1 + α × ΔT)</p>
+            <p>Мощность, выделяемая на резисторе:</p>
+            <p>P = I² × R</p>
+            <p>или</p>
+            <p>P = U² / R</p>
+
+              <span class="close-button" id="close-modal14-btn">×</span>
+            </div>
+</div>
+
+<!--I окно -->
+<div>
+    <div class="modal" id="myModal15">
+        <div class="modal-content">
+<h2>Сила тока</h2>
+            <p>Сила тока (определение):</p>
+            <p>I = q / t</p>
+            <p>Закон Ома для участка цепи:</p>
+            <p>I = U / R</p>
+            <p>Сила тока через мощность и напряжение:</p>
+            <p>I = P / U</p>
+            <p>Сила тока в последовательной цепи:</p>
+            <p>I_общ = I₁ = I₂ = ... = Iₙ</p>
+            <p>Сила тока в параллельной цепи:</p>
+            <p>I_общ = I₁ + I₂ + ... + Iₙ</p>
+            <p>Плотность тока:</p>
+            <p>j = I / S</p>
+            <p>где S — площадь поперечного сечения проводника</p>
+            <p>Эффективное значение переменного тока:</p>
+            <p>I_эфф = I_макс / √2</p>
+
+              <span class="close-button" id="close-modal15-btn">×</span>
+            </div>
+</div>
+
+
+<!--Q окно-->
+
+<div>
+    <div class="modal" id="myModal16">
+        <div class="modal-content">
+            <h2>Теплота</h2>
+            <p>Количество теплоты при нагревании/охлаждении:</p>
+            <p>Q = c × m × ΔT</p>
+            <p>Количество теплоты при плавлении/кристаллизации:</p>
+            <p>Q = λ × m</p>
+            <p>Количество теплоты при парообразовании/конденсации:</p>
+            <p>Q = L × m</p>
+            <p>Количество теплоты при сгорании топлива:</p>
+            <p>Q = q × m</p>
+            <p>Работа газа в термодинамике:</p>
+            <p>Q = ΔU + A</p>
+            <p>Закон Джоуля–Ленца (тепловое действие тока):</p>
+            <p>Q = I² × R × t</p>
+            <p>или</p>
+            <p>Q = U × I × t</p>
+            <p>или</p>
+            <p>Q = (U² / R) × t</p>
+
+              <span class="close-button" id="close-modal16-btn">×</span>
+            </div>
+</div>
+
+
+<script>
+        // Открытие окна по кнопке
+        document.getElementById('open-modal-btn').addEventListener('click', () => {
+            document.getElementById('myModal').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие окна по кнопке
+        document.getElementById('close-modal-btn').addEventListener('click', () => {
+            document.getElementById('myModal').style.display = 'none';  // Скрыть окно
+        });
+    </script>
+
+<script>
+        // Открытие 2 окна по кнопке
+        document.getElementById('open-modal2-btn').addEventListener('click', () => {
+            document.getElementById('myModal2').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие 2 окна по кнопке
+        document.getElementById('close-modal2-btn').addEventListener('click', () => {
+            document.getElementById('myModal2').style.display = 'none';  // Скрыть окно
+        });
+    </script>
+
+<script>
+        // Открытие 3 окна по кнопке
+        document.getElementById('open-modal3-btn').addEventListener('click', () => {
+            document.getElementById('myModal3').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие 3 окна по кнопке
+        document.getElementById('close-modal3-btn').addEventListener('click', () => {
+            document.getElementById('myModal3').style.display = 'none';  // Скрыть окно
+        });
+    </script>
+
+<script>
+        // Открытие 4 окна по кнопке
+        document.getElementById('open-modal4-btn').addEventListener('click', () => {
+            document.getElementById('myModal4').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие 4 окна по кнопке
+        document.getElementById('close-modal4-btn').addEventListener('click', () => {
+            document.getElementById('myModal4').style.display = 'none';  // Скрыть окно
+        });
+    </script>
+
+<script>
+        // Открытие 5 окна по кнопке
+        document.getElementById('open-modal5-btn').addEventListener('click', () => {
+            document.getElementById('myModal5').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие 5 окна по кнопке
+        document.getElementById('close-modal5-btn').addEventListener('click', () => {
+            document.getElementById('myModal5').style.display = 'none';  // Скрыть окно
+        });
+    </script>
+
+<script>
+// Открытие 6 окна по кнопке
+        document.getElementById('open-modal6-btn').addEventListener('click', () => {
+            document.getElementById('myModal6').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие 6 окна по кнопке
+        document.getElementById('close-modal6-btn').addEventListener('click', () => {
+            document.getElementById('myModal6').style.display = 'none';  // Скрыть окно
+        });
+    </script>
+    
+<script>
+// Открытие 7 окна по кнопке
+        document.getElementById('open-modal7-btn').addEventListener('click', () => {
+            document.getElementById('myModal7').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие 7 окна по кнопке
+        document.getElementById('close-modal7-btn').addEventListener('click', () => {
+            document.getElementById('myModal7').style.display = 'none';  // Скрыть окно
+        });
+    </script>
+    
+
+<script>
+// Открытие 8 окна по кнопке
+        document.getElementById('open-modal8-btn').addEventListener('click', () => {
+            document.getElementById('myModal8').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие 8 окна по кнопке
+        document.getElementById('close-modal8-btn').addEventListener('click', () => {
+            document.getElementById('myModal8').style.display = 'none';  // Скрыть окно
+        });
+    </script>    
+
+<script>
+// Открытие 9 окна по кнопке
+        document.getElementById('open-modal9-btn').addEventListener('click', () => {
+            document.getElementById('myModal9').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие 9 окна по кнопке
+        document.getElementById('close-modal9-btn').addEventListener('click', () => {
+            document.getElementById('myModal9').style.display = 'none';  // Скрыть окно
+        });
+    </script>  
+    
+<script>
+// Открытие 10 окна по кнопке
+        document.getElementById('open-modal10-btn').addEventListener('click', () => {
+            document.getElementById('myModal10').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие 10 окна по кнопке
+        document.getElementById('close-modal10-btn').addEventListener('click', () => {
+            document.getElementById('myModal10').style.display = 'none';  // Скрыть окно
+        });
+    </script>  
+
+<script>
+// Открытие 11 окна по кнопке
+        document.getElementById('open-modal11-btn').addEventListener('click', () => {
+            document.getElementById('myModal11').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие 11 окна по кнопке
+        document.getElementById('close-modal11-btn').addEventListener('click', () => {
+            document.getElementById('myModal11').style.display = 'none';  // Скрыть окно
+        });
+    </script>  
+    
+<script>
+// Открытие 12 окна по кнопке
+        document.getElementById('open-modal12-btn').addEventListener('click', () => {
+            document.getElementById('myModal12').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие 12 окна по кнопке
+        document.getElementById('close-modal12-btn').addEventListener('click', () => {
+            document.getElementById('myModal12').style.display = 'none';  // Скрыть окно
+        });
+    </script>      
+    
+<script>
+// Открытие 13 окна по кнопке
+        document.getElementById('open-modal13-btn').addEventListener('click', () => {
+            document.getElementById('myModal13').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие 13 окна по кнопке
+        document.getElementById('close-modal13-btn').addEventListener('click', () => {
+            document.getElementById('myModal13').style.display = 'none';  // Скрыть окно
+        });
+    </script> 
+    
+<script>
+// Открытие 14 окна по кнопке
+        document.getElementById('open-modal14-btn').addEventListener('click', () => {
+            document.getElementById('myModal14').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие 14 окна по кнопке
+        document.getElementById('close-modal14-btn').addEventListener('click', () => {
+            document.getElementById('myModal14').style.display = 'none';  // Скрыть окно
+        });
+    </script>
+
+<script>
+        // Открытие 15 окна по кнопке
+        document.getElementById('open-modal15-btn').addEventListener('click', () => {
+            document.getElementById('myModal15').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие окна по кнопке
+        document.getElementById('close-modal15-btn').addEventListener('click', () => {
+            document.getElementById('myModal15').style.display = 'none';  // Скрыть окно
+        });
+    </script>
+
+<script>
+        // Открытие 16 окна по кнопке
+        document.getElementById('open-modal16-btn').addEventListener('click', () => {
+            document.getElementById('myModal16').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие окна по кнопке
+        document.getElementById('close-modal16-btn').addEventListener('click', () => {
+            document.getElementById('myModal16').style.display = 'none';  // Скрыть окно
+        });
+    </script>
+
+
+
+        <div class="white-panel" style="border: 1px white solid">
+
+            <h2><strong>Физические постоянные величины</strong></h2>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;font-size: 19px">
+            <div style="flex: 1; min-width: 300px;">
+                <p><strong>Скорость света в вакууме:</strong> c = 3 × 10⁸ м/с</p>
+                <p><strong>Гравитационная постоянная:</strong> G = 6.67 × 10⁻¹¹ Н·м²/кг²</p>
+                <p><strong>Ускорение свободного падения на Земле:</strong> g = 9.8 м/с²</p>
+                <p><strong>Постоянная Планка:</strong> h = 6.63 × 10⁻³⁴ Дж·с</p>
+                <p><strong>Элементарный электрический заряд:</strong> e = 1.6 × 10⁻¹⁹ Кл</p>
+                <p><strong>Молярная газовая постоянная:</strong> R = 8.31 Дж/(моль·К)</p>
+                <p><strong>Постоянная Авогадро:</strong> Nₐ = 6.02 × 10²³ моль⁻¹</p>
+                <p><strong>Электрическая постоянная:</strong> ε₀ = 8.85 × 10⁻¹² Ф/м</p>
+            </div>
+            <div style="flex: 1; min-width: 300px;">
+                <p><strong>Магнитная постоянная:</strong> μ₀ = 4π × 10⁻⁷ Гн/м</p>
+                <p><strong>Константа Кулона:</strong> k = 1/(4πε₀) ≈ 9 × 10⁹ Н·м²/Кл²</p>
+                <p><strong>Масса покоя электрона:</strong> mₑ = 9.1 × 10⁻³¹ кг</p>
+                <p><strong>Масса покоя протона:</strong> mₚ = 1.67 × 10⁻²⁷ кг</p>
+                <p><strong>Атомная единица массы:</strong> 1 а.е.м. = 1.66 × 10⁻²⁷ кг</p>
+                <p><strong>Нормальные условия (для газов):</strong> T = 273 К (0 °C), P = 101325 Па</p>
+                <p><strong>Молярный объём идеального газа при н.у.:</strong> Vₘ = 22.4 л/моль</p>
+            </div>
+        </div>
+
+    
+        </div>
+
+
+<div class="white-panel" style="max-width: auto;height: auto;border: 1px white solid">
+        <div class="centered-text" style="background:none">
+
+                <h1>Основные формулы и законы</h1>
+
+
+        </div>
+</div>
+<div class="d-flex gap-2 justify-content-center py-7">
+
+    <p><button id="open-modalf-btn"  class="btn btn-primary -pill px-3" type="button"><h1>cтатика 📐</h1> </button></p>
+    <p><button id="open-modalf2-btn"  class="btn btn-primary -pill px-3" type="button"><h1>жидкости и газы ⚗️</h1> </button></p>
+    <p><button id="open-modalf3-btn"  class="btn btn-primary -pill px-3" type="button"><h1>тепловые явления 🔥</h1> </button></p>
+    <p><button id="open-modalf4-btn"  class="btn btn-primary -pill px-3" type="button"><h1>кинематика 🏃‍♂️</h1> </button></p>
+
+</div>
+
+<div class="d-flex gap-2 justify-content-center py-7">
+
+    <p><button id="open-modalf5-btn"  class="btn btn-primary -pill px-3" type="button"><h1>динамика 💪</h1> </button></p>
+    <p><button id="open-modalf6-btn"  class="btn btn-primary -pill px-3" type="button"><h1>импульс ➡️</h1> </button></p>
+    <p><button id="open-modalf7-btn"  class="btn btn-primary -pill px-3" type="button"><h1>электрические явления 🔌</h1> </button></p>
+
+</div>
+
+    <!--Статика окно-->
+<div class="modal" id="myModalf">
+
+        <div class="modal-content">
+<h2>Статика</h2>
+            <p>Момент силы:</p>
+            <p>M = F × l × sinα</p>
+            <p>где l — плечо силы, α — угол между направлением силы и рычагом</p>
+            <p>Правило рычага (условие равновесия):</p>
+            <p>F₁ × l₁ = F₂ × l₂</p>
+            <p>Условие равновесия тела (сумма моментов равна нулю):</p>
+            <p>ΣM = 0</p>
+            <p>Неподвижный блок:</p>
+            <p>Не даёт выигрыша в силе, изменяет только направление действия силы</p>
+            <p>Подвижный блок:</p>
+            <p>Даёт выигрыш в силе в 2 раза: F = ½P, где P — вес груза</p>
+
+              <span class="close-button" id="close-modalf-btn">×</span>
+        </div>
+
+
+    </div>
+
+
+<!--Жидкости и газы окно-->
+<div class="modal" id="myModalf2">
+
+        <div class="modal-content">
+<h2>Жидкости и газы</h2>
+            <p>Давление твёрдого тела:</p>
+            <p>P = F / S</p>
+            <p>Давление жидкости или газа на дно и стенки сосуда:</p>
+            <p>P = ρ × g × h</p>
+            <p>Сообщающиеся сосуды:</p>
+            <p>В неподвижной однородной жидкости давление одинаково на одном уровне: h₁ = h₂</p>
+            <p>Гидравлическая машина:</p>
+            <p>F₁ / S₁ = F₂ / S₂, следовательно, выигрыш в силе: F₂ = F₁ × (S₂ / S₁)</p>
+            <p>Архимедова сила (выталкивающая сила):</p>
+            <p>F_А = ρ_ж × g × V_п</p>
+            <p>где V_п — объём погружённой части тела, ρ_ж — плотность жидкости</p>
+            <p>Условия плавания тел:</p>
+            <p>Тело плавает, если F_А ≥ F_тяж, то есть ρ_ж × V_п ≥ m</p>
+            <p>или в терминах плотности: если ρ_тела < ρ_ж — тело всплывает,</p>
+            <p>если ρ_тела = ρ_ж — тело находится в равновесии в толще жидкости,</p>
+            <p>если ρ_тела > ρ_ж — тело тонет.</p>
+
+              <span class="close-button" id="close-modalf2-btn">×</span>
+        </div>
+
+
+    </div>
+
+<!--Тепловые явления-->
+<div class="modal" id="myModalf3">
+
+        <div class="modal-content">
+            <h2>Тепловые явления</h2>
+            <p>Количество теплоты при нагревании/охлаждении:</p>
+            <p>Q = c × m × ΔT</p>
+            <p>Количество теплоты при плавлении/кристаллизации:</p>
+            <p>Q = λ × m</p>
+            <p>Количество теплоты при парообразовании/конденсации:</p>
+            <p>Q = L × m</p>
+            <p>Количество теплоты при сгорании топлива:</p>
+            <p>Q = q × m</p>
+            <p>Первый закон термодинамики:</p>
+            <p>ΔU = Q - A</p>
+            <p>где ΔU — изменение внутренней энергии, A — работа газа</p>
+            <p>КПД тепловой машины:</p>
+            <p>η = (Q_н - Q_х) / Q_н × 100%</p>
+            <p>или</p>
+            <p>η = A / Q_н × 100%</p>
+            <p>Максимальный КПД (цикл Карно):</p>
+            <p>η_max = (T_н - T_х) / T_н × 100%</p>
+
+              <span class="close-button" id="close-modalf3-btn">×</span>
+        </div>
+</div>
+
+<!--Кинематика окно-->
+<div class="modal" id="myModalf4">
+    <div class="modal-content">
+        <h2>Кинематика</h2>
+        <p>Перемещение:</p>
+        <p>S = v × t</p>
+        <p>Скорость равномерного движения:</p>
+        <p>v = S / t</p>
+        <p>Ускорение:</p>
+        <p>a = (v - v₀) / t</p>
+        <p>Перемещение при равноускоренном движении:</p>
+        <p>S = v₀t + ½at²</p>
+        <p>Скорость через ускорение и время:</p>
+        <p>v = v₀ + at</p>
+        <p>Формула перемещения без времени:</p>
+        <p>S = (v² - v₀²) / (2a)</p>
+        <p>Движение по окружности (линейная скорость):</p>
+        <p>v = ω × R</p>
+        <p>Угловая скорость:</p>
+        <p>ω = φ / t</p>
+        <p>Центростремительное ускорение:</p>
+        <p>a = v² / R</p>
+
+        <span class="close-button" id="close-modalf4-btn">×</span>
+    </div>
+</div>
+
+
+<!--Динамика окно-->
+<div class="modal" id="myModalf5">
+
+        <div class="modal-content">
+            <h2>Динамика</h2>
+            <p>Второй закон Ньютона:</p>
+            <p>F = m × a</p>
+            <p>Сила тяжести:</p>
+            <p>F = m × g</p>
+            <p>Сила упругости (закон Гука):</p>
+            <p>F = -k × x</p>
+            <p>Сила трения скольжения:</p>
+            <p>F = μ × N</p>
+            <p>Центростремительная сила:</p>
+            <p>F = m × v² / R</p>
+            <p>Закон всемирного тяготения:</p>
+            <p>F = G × (m₁ × m₂) / r²</p>
+            <p>Импульс тела:</p>
+            <p>p = m × v</p>
+            <p>Закон сохранения импульса (для замкнутой системы):</p>
+            <p>m₁v₁ + m₂v₂ = m₁v₁' + m₂v₂'</p>
+            <p>Равнодействующая сила (векторная сумма всех сил):</p>
+            <p>ΣF = F₁ + F₂ + ... + Fₙ</p>
+
+              <span class="close-button" id="close-modalf5-btn">×</span>
+        </div>
+</div>
+
+<!--Импульс окно-->
+<div class="modal" id="myModalf6">
+
+        <div class="modal-content">
+            <h2>Импульс</h2>
+            <p>Импульс тела:</p>
+            <p>p = m × v</p>
+            <p>Импульс силы:</p>
+            <p>F × t = Δp</p>
+            <p>Второй закон Ньютона через импульс:</p>
+            <p>F = Δp / Δt</p>
+            <p>Закон сохранения импульса (для замкнутой системы):</p>
+            <p>m₁v₁ + m₂v₂ = m₁v₁' + m₂v₂'</p>
+            <p>Абсолютно упругий удар:</p>
+            <p>Сохраняются и импульс, и кинетическая энергия</p>
+            <p>Абсолютно неупругий удар:</p>
+            <p>После удара тела движутся вместе, импульс сохраняется, энергия — нет</p>
+
+              <span class="close-button" id="close-modalf6-btn">×</span>
+        </div>
+</div>
+
+<!--Электрические явления окно-->
+<div class="modal" id="myModalf7">
+    <div class="modal-content">
+        <h2>Электрические явления</h2>
+        <p>Закон Ома для участка цепи:</p>
+        <p>I = U / R</p>
+        <p>Закон Джоуля–Ленца (тепловое действие тока):</p>
+        <p>Q = I² × R × t</p>
+        <p>Работа электрического тока:</p>
+        <p>A = U × I × t</p>
+        <p>Мощность электрического тока:</p>
+        <p>P = U × I</p>
+        <p>или</p>
+        <p>P = I² × R</p>
+        <p>или</p>
+        <p>P = U² / R</p>
+        <p>Сопротивление при последовательном соединении проводников:</p>
+        <p>R_общ = R₁ + R₂ + ... + Rₙ</p>
+        <p>Сопротивление при параллельном соединении проводников:</p>
+        <p>1/R_общ = 1/R₁ + 1/R₂ + ... + 1/Rₙ</p>
+        <p>Ёмкость конденсатора:</p>
+        <p>C = q / U</p>
+        <p>Энергия заряженного конденсатора:</p>
+        <p>E = ½C × U²</p>
+        <p>Закон Кулона (сила взаимодействия точечных зарядов):</p>
+        <p>F = k × (q₁ × q₂) / r²</p>
+
+        <span class="close-button" id="close-modalf7-btn">×</span>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+        // Открытие f окна по кнопке
+        document.getElementById('open-modalf-btn').addEventListener('click', () => {
+            document.getElementById('myModalf').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие окна по кнопке
+        document.getElementById('close-modalf-btn').addEventListener('click', () => {
+            document.getElementById('myModalf').style.display = 'none';  // Скрыть окно
+        });
+    </script>
+
+<script>
+        // Открытие f2 окна по кнопке
+        document.getElementById('open-modalf2-btn').addEventListener('click', () => {
+            document.getElementById('myModalf2').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие окна по кнопке
+        document.getElementById('close-modalf2-btn').addEventListener('click', () => {
+            document.getElementById('myModalf2').style.display = 'none';  // Скрыть окно
+        });
+    </script>
+
+<script>
+        // Открытие f3 окна по кнопке
+        document.getElementById('open-modalf3-btn').addEventListener('click', () => {
+            document.getElementById('myModalf3').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие окна по кнопке
+        document.getElementById('close-modalf3-btn').addEventListener('click', () => {
+            document.getElementById('myModalf3').style.display = 'none';  // Скрыть окно
+        });
+    </script>
+
+
+<script>
+        // Открытие f4 окна по кнопке
+        document.getElementById('open-modalf4-btn').addEventListener('click', () => {
+            document.getElementById('myModalf4').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие окна по кнопке
+        document.getElementById('close-modalf4-btn').addEventListener('click', () => {
+            document.getElementById('myModalf4').style.display = 'none';  // Скрыть окно
+        });
+    </script>
+
+<script>
+        // Открытие f5 окна по кнопке
+        document.getElementById('open-modalf5-btn').addEventListener('click', () => {
+            document.getElementById('myModalf5').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие окна по кнопке
+        document.getElementById('close-modalf5-btn').addEventListener('click', () => {
+            document.getElementById('myModalf5').style.display = 'none';  // Скрыть окно
+        });
+    </script>
+
+<script>
+        // Открытие f окна по кнопке
+        document.getElementById('open-modalf6-btn').addEventListener('click', () => {
+            document.getElementById('myModalf6').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие окна по кнопке
+        document.getElementById('close-modalf6-btn').addEventListener('click', () => {
+            document.getElementById('myModalf6').style.display = 'none';  // Скрыть окно
+        });
+    </script>
+
+<script>
+        // Открытие f7 окна по кнопке
+        document.getElementById('open-modalf7-btn').addEventListener('click', () => {
+            document.getElementById('myModalf7').style.display = 'block';  // Показать окно
+        });
+
+        // Закрытие окна по кнопке
+        document.getElementById('close-modalf7-btn').addEventListener('click', () => {
+            document.getElementById('myModalf7').style.display = 'none';  // Скрыть окно
+        });
+    </script>
+
+
+
+{% endblock %}

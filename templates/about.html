@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{%  block title %}
+Это пригодится
+{% endblock %}
+
+{%  block content %}
+<h1>  </h1>
+ <h2></h2>
+
+<style>
+
+        .white-panel {
+                    padding: 20px;
+                    margin: 20px auto;
+                    border-radius: 3px;
+                    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+                    background-color: rgba(255, 255, 255, 0.8);
+                    width: 69vh;
+                    height: auto;
+                    line-height: 1.5em;
+                    color: ;
+                    border: 2px white solid;
+                    margin-left:1px;
+
+                }
+
+
+
+        body {
+            font-family: Arial, sans-serif;
+
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: ;
+            display: flex;
+            justify-content: auto;
+            align-items: auto;
+            height: auto;
+
+
+        }
+
+        .container {
+
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background-color: white;
+            padding: 50px;
+
+        }
+
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        input[type="text"]:focus {
+            border-color: #007bff;
+        }
+
+        button {
+            padding: 10px 20px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p.result {
+            font-size: 18px;
+            color: white;
+        }
+
+       h1{
+       color:#fff;
+
+
+       }
+    </style>
+</head>
+<body>
+<div class="container" style="background-image: url({{ url_for('static', filename='img/kal.jpg') }}")>
+    <h1 style="padding:10px"><strong>Калькулятор ⌨️</strong></h1>
+    <form method="post">
+        <input type="text" name="expression" placeholder="Введите выражение..." required />
+        <button type="submit">Вычислить</button>
+    </form>
+    {% if result %}
+        <p class="result">Результат: {{ result }}</p>
+    {% endif %}
+</div>
+</body>
+<div class="white-panel" style="width:100vh;margin-left:20vh">
+    <h2><strong>Справочник по приставкам</strong></h2>
+    <p style="font-size: 18px">Вот основные метрические приставки, используемые в системе СИ:</p>
+    <div style="display: flex; justify-content: space-between;">
+        <ul style="text-align: left; color: black; flex: 1; padding-right: 10px;">
+            <li><strong>Тера- (Т):</strong> 10<sup>12</sup> = 1 000 000 000 000</li>
+            <li><strong>Гига- (Г):</strong> 10<sup>9</sup> = 1 000 000 000</li>
+            <li><strong>Мега- (М):</strong> 10<sup>6</sup> = 1 000 000</li>
+            <li><strong>Кило- (к):</strong> 10<sup>3</sup> = 1 000</li>
+            <li><strong>Гекто- (г):</strong> 10<sup>2</sup> = 100</li>
+            <li><strong>Дека- (да):</strong> 10<sup>1</sup> = 10</li>
+        </ul>
+        <ul style="text-align: left; color: black; flex: 1; padding-left: 10px;">
+            <li><strong>Деци- (д):</strong> 10<sup>-1</sup> = 0.1</li>
+            <li><strong>Санти- (с):</strong> 10<sup>-2</sup> = 0.01</li>
+            <li><strong>Милли- (м):</strong> 10<sup>-3</sup> = 0.001</li>
+            <li><strong>Микро- (мк):</strong> 10<sup>-6</sup> = 0.000001</li>
+            <li><strong>Нано- (н):</strong> 10<sup>-9</sup> = 0.000000001</li>
+            <li><strong>Пико- (п):</strong> 10<sup>-12</sup> = 0.000000000001</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
